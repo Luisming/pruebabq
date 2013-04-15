@@ -14,7 +14,7 @@ public class Book {
 	private String pathToBook;
 		//Path to book inside Dropbox folder. 
 	
-	public void recurso(String name, String tit, Date creation, String path) {
+	public void book(String name, String tit, Date creation, String path) {
 		// Constructor
 		fileName=name;
 		title=tit;

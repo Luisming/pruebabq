@@ -1,5 +1,7 @@
 package com.example.bqprueba;
 
+import java.io.File;
+
 //Implements methods used to authenticate and comunicatewith Dropbox server.
 
 public class LoginService {
@@ -11,11 +13,11 @@ public class LoginService {
 		//In this dummy application always returns true. Correct login.
 	}
 
-	public static int getNumberOfFiles()
-	{
-		//Returns the number of .epuf files inside Dropbox folder.
-		return 10;
-		//In this dummy application always returns 10.
+	public static File getFileSystem()
+	{//Dummy method which returns the FileSystem used to interact with Dropbox online folder
+     //I use f as a "magic" variable which Dropbox gives to the developer to get information of the Dropbox folder.
+		File f = new File("path/to/dropbox");
+		return f;
 		
 	}
 }
