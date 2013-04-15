@@ -6,8 +6,13 @@
 
     <ListView
         android:id="@+id/listView1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_width="227dp"
+        android:layout_height="356dp" >
     </ListView>
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
