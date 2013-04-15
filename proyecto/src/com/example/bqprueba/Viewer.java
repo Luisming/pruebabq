@@ -9,5 +9,6 @@ public class Viewer extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.viewer);
 	
+		
 	}
 }

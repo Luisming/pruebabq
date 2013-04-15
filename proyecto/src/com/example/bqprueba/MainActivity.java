@@ -30,6 +30,7 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
+				//Calls LoginService and if it returns true (login accepted) changes activity to the epuf reader (Viewer Class)
 				if (LoginService.login(user.getText().toString(), pass.getText().toString())==true)
 				{
 						Intent i= new Intent(getApplicationContext(),Viewer.class);
@@ -44,6 +45,7 @@ public class MainActivity extends Activity {
 
 	private void changeActivity (Intent i)
 	{
+		//Method userd for changing betweed activities when called
 		startActivity(i);
 		
 	}

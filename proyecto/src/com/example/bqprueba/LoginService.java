@@ -1,6 +1,6 @@
 package com.example.bqprueba;
 
-//Implements methods used to authenticate with Dropbox server.
+//Implements methods used to authenticate and comunicatewith Dropbox server.
 
 public class LoginService {
 	
@@ -11,4 +11,11 @@ public class LoginService {
 		//In this dummy application always returns true. Correct login.
 	}
 
+	public static int getNumberOfFiles()
+	{
+		//Returns the number of .epuf files inside Dropbox folder.
+		return 10;
+		//In this dummy application always returns 10.
+		
+	}
 }
