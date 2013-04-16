@@ -45,7 +45,7 @@ public class Viewer extends Activity{
 		//Creation of the listener which shows the Book's front then an element of the ListView is clicked.
 		ListView listView = (ListView)findViewById(R.id.listView1);
 		
-		//Set of the adapter used to show Book's information
+		//Setting of the adapter used to show Book's information
 		final ArrayAdapter<Book> listAdapter=  new ArrayAdapter<Book>(this,android.R.layout.simple_list_item_1,data);
         listView.setAdapter(listAdapter);
         
@@ -53,8 +53,8 @@ public class Viewer extends Activity{
         listView.setOnItemClickListener(new OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view,
                 int position, long id) {
-             select.setText( data[position].getDate());
-             select2.setText(data[position].getTitle());
+            		select.setText( data[position].getDate());
+            		select2.setText(data[position].getTitle());
             }
 
 			
@@ -66,10 +66,11 @@ public class Viewer extends Activity{
         Spinner spinView= (Spinner) findViewById(R.id.spinner1);
         
         //Creation of spinner's ArrayAdapter
-        ArrayAdapter<String> spinAdapter = new ArrayAdapter<String>(this,
-        		android.R.layout.simple_spinner_item, spinner_show);
-        	spinAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        	spinView.setAdapter(spinAdapter);
+        ArrayAdapter<String> spinAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, spinner_show);
+        
+        spinAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        
+        spinView.setAdapter(spinAdapter);
         
         	//Implementation of Spinner's click listener action.
         	spinView.setOnItemSelectedListener(new OnItemSelectedListener() {
@@ -86,27 +87,25 @@ public class Viewer extends Activity{
 					
 						//Used comparator generic class to sort by title
 						listAdapter.sort(new Comparator<Book>() {
-							public int compare(Book object1, Book object2) {
-								return object1.getTitle().compareTo(object2.getTitle());
-							};
+								public int compare(Book object1, Book object2) {
+									return object1.getTitle().compareTo(object2.getTitle());
+								};
 					
-					});
-					
-					
+						});
 					
 					}
 					
 					//If Spinner's position is 1 Books will be sort by Date
 					else if (position==1)
 					{
-						listAdapter.sort(new Comparator<Book>() {
-							public int compare(Book object1, Book object2) {
-								return object1.getDate().compareTo(object2.getDate());
-							};
+							listAdapter.sort(new Comparator<Book>() {
+								public int compare(Book object1, Book object2) {
+									return object1.getDate().compareTo(object2.getDate());
+								};
 						
 						});
 					}
-					//Notification about changes in the listAdapter
+					//Notification about changes in listAdapter
 					listAdapter.notifyDataSetChanged();
 				}
 
