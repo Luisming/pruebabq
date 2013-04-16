@@ -9,12 +9,12 @@ public class Book {
 		//Book's filename
 	private String title;
 		//Book's title.
-	private Date creationDate;
+	private String creationDate;
 		//Book's creation date
 	private String pathToBook;
 		//Path to book inside Dropbox folder. 
 	
-	public Book(String n, String t, Date d, String p)
+	public Book(String n, String t, String d, String p)
 	{
 		fileName=n;
 		title=t;
@@ -35,7 +35,7 @@ public class Book {
 		return title;
 	}
 	
-	public Date getcreationate()
+	public String getDate()
 	{
 		//Returns the book's creationDate
 		return creationDate;

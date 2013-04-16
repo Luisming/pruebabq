@@ -12,14 +12,14 @@ public class BookLoaderService {
 	public static Book[] getBookList()
 	{
 		//Creating variables
-		Date d=new Date(1987, 2, 3);
-		Book b= new Book("tej.epuf","Tejedores de cabellos", d,"path/tej.epuf");
 		
-		Date d1=new Date(1987, 2, 5);
-		Book b2= new Book("umsf.epuf","Un mundo sin fin", d,"path/umsf.epuf");
+		Book b= new Book("tej.epuf","cTejedores de cabellos", "2000-01-03","path/tej.epuf");
 		
-		Date d2=new Date(1987, 2, 4);
-		Book b3= new Book("got.epuf","Juego de Tronos", d,"path/got.epuf");
+		
+		Book b2= new Book("umsf.epuf","bUn mundo sin fin", "2000-01-01","path/umsf.epuf");
+		
+	
+		Book b3= new Book("got.epuf","aJuego de Tronos", "2000-01-02","path/got.epuf");
 		
 		
 		//Variable where all Book entities are stored, in this case 3 entities of Book created to mock

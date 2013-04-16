@@ -4,5 +4,10 @@
     <string name="app_name">bqprueba</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="sortDate">Sort by date</string>
+    <string name="sortTitle">Sort by title</string>
+    
+    
+ 
 
 </resources>
