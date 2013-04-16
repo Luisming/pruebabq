@@ -14,12 +14,12 @@ public class Book {
 	private String pathToBook;
 		//Path to book inside Dropbox folder. 
 	
-	public void book(String name, String tit, Date creation, String path) {
-		// Constructor
-		fileName=name;
-		title=tit;
-		creationDate=creation;
-		pathToBook=path;
+	public Book(String n, String t, Date d, String p)
+	{
+		fileName=n;
+		title=t;
+		creationDate= d;
+		pathToBook=p;
 		
 	}
 	
