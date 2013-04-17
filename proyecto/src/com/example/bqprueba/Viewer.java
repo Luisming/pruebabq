@@ -22,13 +22,15 @@ public class Viewer extends Activity{
 	//Array used to store the files found and stored by BookLoaderServier
 	private final Book[] data= BookLoaderService.getBookList();
 	
-	//Used to show the Book's title in the layout's listview.
-	private final String data_show[]=new String[data.length];
+	
 	
 	protected void onCreate(Bundle savedInstanceState) {
+		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.viewer);
-		final String[] spinner_show= {"Select sorting method","By date","By Title"};
+		
+		final String[] spinner_show= {"Select sorting method","By title","By date"};
+		
 		final TextView select= (TextView)findViewById(R.id.textView1);
 		final TextView select2= (TextView)findViewById(R.id.textView2);
 	
@@ -38,8 +40,6 @@ public class Viewer extends Activity{
 		//Creation of the spinner's view.
 		Spinner despList= (Spinner) findViewById(R.id.spinner1);
 		
-		//Population of data_show strings array values.
-		populateData_show();
 		
 		
 		//Creation of the listener which shows the Book's front then an element of the ListView is clicked.
@@ -47,12 +47,13 @@ public class Viewer extends Activity{
 		
 		//Setting of the adapter used to show Book's information
 		final ArrayAdapter<Book> listAdapter=  new ArrayAdapter<Book>(this,android.R.layout.simple_list_item_1,data);
-        listView.setAdapter(listAdapter);
+       
+		listView.setAdapter(listAdapter);
         
+		
        //Implementation of listView's click listener actions. (Read book/Show front of the book) In this case shows Date and Filename
         listView.setOnItemClickListener(new OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View view,
-                int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             		select.setText( data[position].getDate());
             		select2.setText(data[position].getTitle());
             }
@@ -77,11 +78,10 @@ public class Viewer extends Activity{
 
         		
 				@Override
-				public void onItemSelected(AdapterView<?> arg0, View arg1,
-						int position, long arg3) {
+				public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long arg3) {
 					//If spinner's position is 0 Books will be sort by Title
 					
-					if (position==0)
+					if (position==1)
 					{
 						select.setText(spinner_show[position]);
 					
@@ -96,7 +96,7 @@ public class Viewer extends Activity{
 					}
 					
 					//If Spinner's position is 1 Books will be sort by Date
-					else if (position==1)
+					else if (position==2)
 					{
 							listAdapter.sort(new Comparator<Book>() {
 								public int compare(Book object1, Book object2) {
@@ -119,23 +119,7 @@ public class Viewer extends Activity{
         	
 	};
 	
-	private void populateData_show()
-	{//Populates the String Array used to show the Books' titles in the ListView
-		for (int i=0; i<data.length; i++)
-		{
-			data_show[i]=data[i].getTitle();
-			
-		}
-	}
-	public void sortByDate()
-	{//unimplemeted method which sorts the Book's listview by Date
-		
-	}
-		
-	public void sortByFileName()
-	{
-	//Unimplemented method which sorts the Book0s listview by File Name
-	}
+	
 	
 	}
 
